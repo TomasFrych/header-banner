@@ -1,0 +1,89 @@
+@import "containers";
+@import "mixins";
+
+:host {
+  width: 100%;
+  height: calc(100vh + 200px);
+  min-height: 350px;
+  background-position: bottom center;
+  background-size: cover;
+  display: block;
+  background-image: url("/assets/images/about/background-img-dark.svg");
+  position: relative;
+  top: -200px;
+
+  @include for-phone {
+    background-image: url("/assets/images/about/background-img-dark-sm.svg");
+  }
+
+  canvas {
+    position: relative;
+    top: -12vh;
+
+    @include for-phone {
+      top: -20vh;
+    }
+  }
+
+  .light-bg {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+
+    @include for-phone {
+      display: none;
+    }
+
+    &-sm {
+      display: none;
+
+      @include for-phone {
+        display: block;
+      }
+    }
+  }
+
+  .banner {
+    &-content {
+      height: 28vh;
+      max-width: 970px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      position: absolute;
+      bottom: 20%;
+      right: 50%;
+      transform: translate(50%);
+      padding: 0 17px;
+
+      @include for-phone {
+        bottom: 30%;
+      }
+
+      @include contactHover;
+    }
+
+    &-text {
+      font-size: var(--font-28);
+      color: var(--white);
+      font-weight: var(--medium);
+
+      @include for-phone {
+        font-size: var(--font-16);
+      }
+
+      @include for-small-phone {
+        font-size: var(--font-14);
+      }
+    }
+
+    &-button {
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}

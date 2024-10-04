@@ -1,0 +1,9 @@
+<canvas #scene></canvas>
+<img class="light-bg" src="assets/images/about/background-img-light.svg" alt="light" loading="lazy">
+<img class="light-bg light-bg-sm" src="assets/images/about/background-img-light-sm.svg" alt="light" loading="lazy">
+<div class="banner-content">
+  <div class="banner-text">
+    <p>{{ 'HOME.ABOUT_US_TEXT' | translate | uppercase }}</p>
+  </div>
+  <app-button class="banner-button" (click)="navigateToContactPage()" [text]="'HEADER.CONTACT'"></app-button>
+</div>
